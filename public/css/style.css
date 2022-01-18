@@ -1,0 +1,72 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5dc;
+}
+
+header{
+  background-color: rgb(36, 36, 36);
+}
+
+h1{
+  margin: 0;
+  padding: 1% 4%;
+  letter-spacing: 0.5em;
+  color: #EEE;
+}
+
+#main_content{
+  padding: 5%;
+  display:inline-block;
+}
+
+
+/* 現在地表示 */
+#geo{
+  display:inline-block;
+  padding: 5%;
+  width: 80vw;
+  background-color: RGB(200,200,200);
+  border-radius: 10px;
+}
+#geo h2{
+  margin: 0 1px;
+}
+#geo_show_button{
+  padding-left: 1em;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 新規投稿 */
+#add_messeage{
+  padding-left: 2%;
+  display: inline-block;
+}
+#add_messeage h2{
+  margin: 0;
+  margin-top: 20px;
+}
+#add_messeage textarea{
+  width: 75vw;
+  height: 8ex;
+}
+
+/* TL */
+#text_card_area .text_card{
+  background: #f5f5dc;
+  border-bottom: 2px solid #b3b39e;
+  padding: 15px;
+  padding-bottom: 10px;
+  margin: 10px;
+}
+#text_card_area .text_card_time{
+  text-align: right;
+  font-size: small;
+}
+#text_card_area .text_card_text{
+  line-height: 1.1em;
+}

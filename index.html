@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+  <title>NeBy</title>
+  <meta name="description" content="近距離SNSサイト">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/get_geo.js" defer></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/get_mes.js" defer></script>
+  <script src="js/some.js" defer></script>
+  </head>
+  <body>
+    <script>
+      // socketio 初期設定
+      let socket = io();
+
+      // 現在地表示初期設定
+      let geo_mask = true
+    </script>
+  <!----- header----->
+  <header>
+    <h1>NeBy</h1>
+  </header>
+  <!----- /header ----->
+
+  <!----- main ----->
+  <div id="main_content">
+    <div id="geo">
+      <h2>あなたの現在地</h2>
+      <p id = "now_geo_mask">緯度： 非表示 <br>経度： 非表示 </p>
+      <p id = "now_geo" style="display: none;">緯度： --- ,経度： --- </p>
+      <p id = "geo_show_button" >表示・非表示切り替え</p>
+      <a id = "now_geo_a" href="#">===</a>
+    </div>
+    <div id="add_messeage">
+      <h2>新規投稿</h2>
+      <form onsubmit="NEW_MES_SEND();return false;" autocomplete="off">
+        <textarea type="text" id="new_mes_text" name="new_mes" required maxlength="140" placeholder="新規投稿"></textarea>
+        <br>
+        <button type="submit" id="new_mes_sub">投稿</button>
+      </form>
+    </div>
+    <h2>タイムライン</h2>
+    <div id="text_card_area"></div>
+  </div>
+  <!----- /main ----->
+  </body>
+</html>
