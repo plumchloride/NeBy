@@ -33,3 +33,7 @@ dbにメッセージが追加されるたびにそのデータをユーザに送
 
 # 追加したい機能
 - 投稿に対してクリックすると住所を表示する機能（いろいろ社会的事情てきに問題がありそう）
+
+# 画像
+<img width="576" alt="スクリーンショット 2022-06-27 11 44 34" src="https://user-images.githubusercontent.com/70005022/176003284-f97a1885-693d-417d-88c3-5f9e7345b882.png">
+<img width="698" alt="スクリーンショット 2022-06-27 11 44 49" src="https://user-images.githubusercontent.com/70005022/176003328-8ead5846-3c4b-4723-ba52-7164a06ca14e.png">
