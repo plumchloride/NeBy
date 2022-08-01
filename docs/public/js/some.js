@@ -60,7 +60,7 @@ const NEW_MES_SEND = () =>{
     xhr = new XMLHttpRequest;
     xhr.onload = function(){
       var res = xhr.responseText;
-      console.log(res);
+      // console.log(res);
       GET_MES();
     };
     xhr.onerror = function(){

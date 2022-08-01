@@ -29,7 +29,7 @@ const SET_MES = (response_dic)=>{
   document.getElementById("text_card_area").innerHTML = ""
   response_dic.sort((a, b) => a.time_stamp - b.time_stamp);
   response_dic.forEach(element => {
-    console.log(element)
+    // console.log(element)
     MAKE_CARD(element)
   });
 }
