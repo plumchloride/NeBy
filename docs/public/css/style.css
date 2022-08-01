@@ -1,0 +1,172 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5dc;
+}
+
+header{
+  background-color: rgb(36, 36, 36);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h1{
+  margin: 0;
+  padding: 1% 4%;
+  letter-spacing: 0.5em;
+  color: #EEE;
+}
+
+#main_content{
+  padding: 5%;
+  display:inline-block;
+}
+.non-visi{
+  display: none!important;
+}
+
+
+/* 現在地表示 */
+#geo{
+  display:inline-block;
+  padding: 5%;
+  width: 80vw;
+  background-color: RGB(200,200,200);
+  border-radius: 10px;
+}
+#geo h2{
+  margin: 0 1px;
+}
+.geo_show_button{
+  padding-left: 1em;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* 新規投稿 */
+#add_messeage{
+  padding-left: 2%;
+  display: inline-block;
+}
+#add_messeage h2{
+  margin: 0;
+  margin-top: 20px;
+}
+#add_messeage textarea{
+  width: 75vw;
+  height: 8ex;
+}
+
+/* TL */
+#text_card_area .text_card{
+  background: #f5f5dc;
+  border-bottom: 2px solid #b3b39e;
+  padding: 15px;
+  padding-bottom: 10px;
+  margin: 10px;
+}
+#text_card_area .text_card_time{
+  text-align: right;
+  font-size: small;
+}
+#text_card_area .text_card_text{
+  line-height: 1.1em;
+}
+
+/* nav */
+.nav_icon{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #EEE;
+  -webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+}
+.nav_icon svg{
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+path{
+  stroke: #EEE;
+  fill: #EEE;
+}
+.nav_icon:hover{
+  color: rgb(108, 108, 248);
+}
+.nav_icon:hover path{
+  stroke: rgb(108, 108, 248);
+  fill: rgb(108, 108, 248);
+}
+
+
+/* 全画面window */
+.flow-wrapper{
+  width: 100%;
+  height:100vh;
+  background-color: rgba(10,10,10,0.6);
+  color: black;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  overflow-y: hidden;
+  padding: 0px;
+  margin: 0px;
+  left: 0px;
+  top: 0px;
+}
+.flow-container{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f5f5dc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80vw;
+  z-index: 4;
+  
+}
+#info_text{
+  max-height: 50vh;
+  min-height: 50vh;
+  height: 50vh;
+  overflow-y: scroll;
+}
+.div_btn{
+  text-decoration: underline solid;
+  -webkit-text-decoration: underline solid;
+  cursor: pointer;
+}
+.div_btn:hover{
+  color: rgb(108, 108, 248);
+}
+
+@media screen and (min-width:768px) {
+  #main_content{
+    padding-left: 30vw;
+    max-width: 40vw;
+    width: 40vw;
+    min-width: 40vw;
+    padding-right: 30vw;
+  }
+  #geo{
+    width: 35vw;
+  }
+  #add_messeage textarea{
+    width: 35vw;
+  }
+  .flow-container{
+    max-width: 30vw;
+  }
+}
