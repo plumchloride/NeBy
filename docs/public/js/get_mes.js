@@ -1,16 +1,35 @@
-// // 各投稿の時に起動
-// socket.on("msg_send",(msg)=>{
-//   navigator.geolocation.getCurrentPosition(SEP_GEO,ERROR_GEO);
-//   if(0.5 > CALC_DIS_KM(lat,long,msg.lat,msg.long)){ // 1km以内だった場合TLに投稿
-//     MAKE_CARD(msg.text.replace(/\n/g, '<br>'),msg.time);
-//   }else{
-//     ;
-//   }
-// })
+let search_lat = "==";
+let search_long = "==";
+let search_time = "==";
+const GET_MES = ()=>{
+  if(!private){
+    navigator.geolocation.getCurrentPosition(SEP_GEO,ERROR_GEO); // 再度緯度経度の取得
+  }
+  send_json = JSON.stringify({"lat":lat,"long":long})
+  xhr = new XMLHttpRequest;
+  xhr.onload = function(){
+    let res = xhr.responseText;
+    SET_MES(JSON.parse(res));
+  };
+  xhr.onerror = function(){
+    alert("バグです。サーバーが起動していません。\n Error1: Server is shutting down.");
+  }
+  xhr.open('POST', "https://viq5lu4m4fudegv5xmub5r4k6y0jeeus.lambda-url.ap-northeast-1.on.aws/", true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(send_json);
 
-// // 初回にまとめて読み込んだときに起動
-// socket.on("msg_db_send",(msg)=>{
-//   msg.forEach(element => {
-//     MAKE_CARD(element.text.replace(/\n/g, '<br>'),element.date);
-//   });
-// })
+  let now = new Date();
+  search_time = now.getFullYear() + "/" + Number(now.getMonth())+1 + "/" + now.getDate() +" "+ now.getHours() + ":" + String("0"+now.getMinutes()).slice(-2) + ":" + String("0"+now.getSeconds()).slice(-2);
+  search_long = long;
+  search_lat = lat;
+  set_tl_get();
+}
+
+const SET_MES = (response_dic)=>{
+  document.getElementById("text_card_area").innerHTML = ""
+  response_dic.sort((a, b) => a.time_stamp - b.time_stamp);
+  response_dic.forEach(element => {
+    console.log(element)
+    MAKE_CARD(element)
+  });
+}

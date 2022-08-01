@@ -13,7 +13,6 @@ if( navigator.geolocation ){
 let lat = 0;
 let long = 0;
 
-
 // 位置情報を分割する
 const SEP_GEO = (position) => {
   GET_GEO = true;
