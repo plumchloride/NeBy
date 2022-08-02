@@ -146,6 +146,7 @@ path{
   width: 70vw;
   overflow-y: scroll;
   overflow-x: hidden;
+  word-break: break-all;
 }
 .div_btn{
   text-decoration: underline solid;
