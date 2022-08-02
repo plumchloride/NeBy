@@ -174,4 +174,8 @@ path{
   .flow-container{
     max-width: 30vw;
   }
+  #info_text{
+    max-width: 30vw;
+    width: 30vw;
+  }
 }
